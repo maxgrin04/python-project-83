@@ -76,8 +76,8 @@ def post_check_url(id):
     except requests.exceptions.RequestException:
         flash("Произошла ошибка при проверке", "danger")
         return redirect(url_for("get_urls_checks_list", id=id, code=400))
-    resp_code, title, h1, descrip = parse_html(response)
-    url_data = url_repository.create_check(id, resp_code, h1, title, descrip)
+    status_code, title, h1, descrip = parse_html(response)
+    url_data = url_repository.create_check(id, status_code, h1, title, descrip)
     if url_data:
         flash("Страница успешно проверена", "success")
         return redirect(url_for("get_urls_checks_list", id=url_data.url_id))
