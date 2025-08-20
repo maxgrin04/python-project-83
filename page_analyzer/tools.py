@@ -31,4 +31,3 @@ def validate_and_normalize_url(url):
     if len(normalized_url) > MAX_URL_LENGTH:
         return None
     return normalized_url
-

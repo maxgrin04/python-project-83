@@ -16,4 +16,3 @@ title varchar(255),
 description varchar(255),
 created_at date NOT NULL
 );
-

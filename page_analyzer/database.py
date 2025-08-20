@@ -92,4 +92,3 @@ class UrlRepository:
         )
         url_data = cursor.fetchall()
         return url_data
-
