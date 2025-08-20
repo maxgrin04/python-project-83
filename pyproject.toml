@@ -21,7 +21,10 @@ dependencies = [
     "idna>=3.10",
     "requests>=2.32.4",
     "urllib3>=2.5.0",
-    "psycopg2-binary>=2.9.10"
+    "psycopg2-binary>=2.9.10",
+    "beautifulsoup4>=4.13.4",
+    "soupsieve>=2.7",
+    "typing-extensions>=4.14.1"
 ]
 
 line-length = 80
