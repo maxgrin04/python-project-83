@@ -29,6 +29,7 @@ dependencies = [
     "ruff>=0.12.9"
 ]
 
+[tool.ruff]
 line-length = 80
 
 [lint.per-file-ignores]
