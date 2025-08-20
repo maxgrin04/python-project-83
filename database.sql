@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS urls_checks;
+DROP TABLE IF EXISTS url_checks;
 DROP TABLE IF EXISTS urls;
 
 CREATE TABLE urls(
@@ -7,7 +7,7 @@ name varchar(255) NOT NULL UNIQUE,
 created_at date NOT NULL
 );
 
-CREATE TABLE urls_checks(
+CREATE TABLE url_checks(
 id bigint PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
 url_id bigint REFERENCES urls (id),
 status_code int,

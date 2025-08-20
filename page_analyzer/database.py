@@ -52,7 +52,7 @@ class UrlRepository:
         cursor.execute(
             "SELECT u.*, "
             "(SELECT c.status_code "
-            "FROM urls_checks AS c "
+            "FROM url_checks AS c "
             "WHERE c.url_id = u.id "
             "ORDER BY c.id DESC LIMIT 1) "
             "AS status_code "
@@ -73,7 +73,7 @@ class UrlRepository:
     def create_check(self, url_id, status_code, h1, title, descrip, cursor=None):
         date = datetime.date.today()
         cursor.execute(
-            "INSERT INTO urls_checks "
+            "INSERT INTO url_checks "
             "(url_id, status_code, h1, title, "
             "description, created_at) "
             "VALUES (%s, %s, %s, %s, %s, %s) "
@@ -86,7 +86,7 @@ class UrlRepository:
     @execute_database
     def get_checks(self, url_id, cursor=None):
         cursor.execute(
-            "SELECT * FROM urls_checks WHERE url_id=%s "
+            "SELECT * FROM url_checks WHERE url_id=%s "
             "ORDER BY id DESC",
             (url_id,)
         )
