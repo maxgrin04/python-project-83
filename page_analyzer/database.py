@@ -51,11 +51,11 @@ class UrlRepository:
     def get_all_urls(self, cursor=None):
         cursor.execute(
             "SELECT u.*, "
-            "(SELECT c.response_code "
+            "(SELECT c.status_code "
             "FROM urls_checks AS c "
             "WHERE c.url_id = u.id "
             "ORDER BY c.id DESC LIMIT 1) "
-            "AS response_code "
+            "AS status_code "
             "FROM urls AS u ORDER BY id DESC"
         )
         urls = cursor.fetchall()
@@ -70,15 +70,15 @@ class UrlRepository:
         return url_data
 
     @execute_database
-    def create_check(self, url_id, resp_code, h1, title, descrip, cursor=None):
+    def create_check(self, url_id, status_code, h1, title, descrip, cursor=None):
         date = datetime.date.today()
         cursor.execute(
             "INSERT INTO urls_checks "
-            "(url_id, response_code, h1, title, "
+            "(url_id, status_code, h1, title, "
             "description, created_at) "
             "VALUES (%s, %s, %s, %s, %s, %s) "
             "RETURNING id, url_id, created_at",
-            (url_id, resp_code, h1, title, descrip, date),
+            (url_id, status_code, h1, title, descrip, date),
         )
         url_data = cursor.fetchone()
         return url_data

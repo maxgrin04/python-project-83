@@ -5,7 +5,7 @@ from validators import url as validate_url
 
 
 def parse_html(response):
-    resp_code = response.status_code
+    status_code = response.status_code
     soup = BeautifulSoup(response.text, "html.parser")
     title_tag = soup.find("title")
     title = title_tag.get_text(strip=True) if title_tag else None
@@ -17,7 +17,7 @@ def parse_html(response):
         if description_tag and "content" in description_tag.attrs
         else None
     )
-    return resp_code, title, h1, descrip
+    return status_code, title, h1, descrip
 
 
 MAX_URL_LENGTH = 255
