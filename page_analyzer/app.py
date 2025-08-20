@@ -81,3 +81,4 @@ def post_check_url(id):
     if url_data:
         flash("Страница успешно проверена", "success")
         return redirect(url_for("get_urls_checks_list", id=url_data.url_id))
+
