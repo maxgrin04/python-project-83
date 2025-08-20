@@ -70,7 +70,10 @@ class UrlRepository:
         return url_data
 
     @execute_database
-    def create_check(self, url_id, status_code, h1, title, descrip, cursor=None):
+    def create_check(
+        self, url_id, status_code,
+        h1, title, descrip, cursor=None
+    ):
         date = datetime.date.today()
         cursor.execute(
             "INSERT INTO url_checks "
