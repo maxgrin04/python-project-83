@@ -13,6 +13,9 @@
 ### CodeClimate Badges
 [![Maintainability](https://qlty.sh/gh/maxgrin04/projects/python-project-83/maintainability.svg)](https://qlty.sh/gh/maxgrin04/projects/python-project-83)
 
+### SonarQube Badges
+[![Quality gate](https://sonarcloud.io/api/project_badges/quality_gate?project=maxgrin04_python-project-83)](https://sonarcloud.io/summary/new_code?id=maxgrin04_python-project-83)
+
 
 ## Описание проекта
 Анализатор страниц - это сайт, который анализирует указанные страницы на SEO-пригодность по аналогии с PageSpeed Insights.
